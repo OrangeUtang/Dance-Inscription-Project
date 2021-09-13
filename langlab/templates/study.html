@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="">
+		<h1>Study</h1>
+	</div>
+	{% for answer in lastLink.answers %}
+		<div class="mt-sm-5 mb-sm-5 d-flex justify-content-center">
+
+			<div>
+				<iframe width="420" height="315"
+					src="{{ answer.movement.url }}">
+				</iframe>
+			</div>
+
+			<div class="ml-sm-5 d-flex align-items-center">
+				<h2>{{ answer.content }}</h2>
+			</div>
+
+		</div>
+  {% endfor %}
+	<div class="mt-sm-5 mb-sm-5 d-flex justify-content-center">
+		<button id="goToAnswerBtn" type="button" class="">I'm ready to answer</button>
+	<div>
+{% endblock content %}

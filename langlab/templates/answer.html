@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h1>Answer</h1>
+	<form action="../answer" method="post">
+		{% for answer in lastLink.answers %}
+			<div class="mt-sm-5 mb-sm-5 d-flex justify-content-center">
+
+				<div>
+					<iframe width="420" height="315"
+						src="{{ answer.movement.url }}">
+					</iframe>
+				</div>
+
+				<div class="ml-sm-5 d-flex align-items-center">
+					<input id='{{ answer.movement_id }}' name="{{ answer.movement_id }}" type='text' class='mt-sm-5 mb-sm-5' />
+				</div>
+
+			</div>
+	  {% endfor %}
+
+		<div class="mt-sm-5 mb-sm-5 d-flex justify-content-center">
+			<input type="submit" class="" value="Submit Answers">
+		</div>
+	</form>
+{% endblock content %}
